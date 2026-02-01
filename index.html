@@ -138,16 +138,43 @@
     setInterval(createHeart, 400);
 
     /* YES click */
-    <script>
+<script>
+  /* NO button escape */
+  const noBtn = document.getElementById("noBtn");
+  noBtn.addEventListener("mouseover", moveButton);
+  noBtn.addEventListener("touchstart", moveButton);
+
+  function moveButton() {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  /* ❤️ Hearts generator */
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+  setInterval(createHeart, 400);
+
+  /* YES click */
   function yesClicked() {
     const message = encodeURIComponent(
       "Yayyy 😍❤️ I said YES! Happy Valentine’s Day 💕🌹"
     );
 
-    // WhatsApp number WITHOUT +
+    // WhatsApp number (NO + sign)
     const phoneNumber = "918287034496";
 
     window.location.href =
-      "https://wa.me/" + 918287034496 + "?text=" + aaj;
+      "https://wa.me/" + phoneNumber + "?text=" + message;
   }
 </script>
