@@ -138,18 +138,16 @@
     setInterval(createHeart, 400);
 
     /* YES click */
-    function yesClicked() {
-      // WhatsApp message
-      const message = encodeURIComponent(
-        "Yayyy 😍❤️ I said YES! Happy Valentine’s Day 💕🌹"
-      );
+    <script>
+  function yesClicked() {
+    const message = encodeURIComponent(
+      "Yayyy 😍❤️ I said YES! Happy Valentine’s Day 💕🌹"
+    );
 
-      // CHANGE number (with country code)
-      const phoneNumber = "+918287034496";
+    // WhatsApp number WITHOUT +
+    const phoneNumber = "918287034496";
 
-      window.location.href = `https://wa.me/${+918287034496}?text=${aaj_to_sex_hoga}`;
-    }
-  </script>
-
-</body>
-</html>
+    window.location.href =
+      "https://wa.me/" + 918287034496 + "?text=" + aaj to sex hoga;
+  }
+</script>
